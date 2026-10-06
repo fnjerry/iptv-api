@@ -719,8 +719,12 @@ def prepare_pages_site(
 
     async function copyLink(value) {{
       if (navigator.clipboard && window.isSecureContext) {{
-        await navigator.clipboard.writeText(value);
-        return true;
+        try {{
+          await navigator.clipboard.writeText(value);
+          return true;
+        }} catch (error) {{
+          // Clipboard API 可能被权限策略拒绝（例如页面嵌在未授权 clipboard-write 的 iframe 中），此时回退到 execCommand。
+        }}
       }}
       return fallbackCopy(value);
     }}
