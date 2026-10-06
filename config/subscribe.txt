@@ -3,9 +3,11 @@
 # This is a list of subscription sources, with one subscription address per line
 # Supports setting UA: https://xxx.com/subscribe.m3u UA="xxx"
 
-
-
-
+# iptv-org 中国频道（开源社区维护，收录电视台公开流）
+https://raw.githubusercontent.com/iptv-org/iptv/master/streams/cn.m3u
+# 国内聚合源（IPv4）
+https://raw.githubusercontent.com/vbskycn/iptv/refs/heads/master/tv/iptv4.txt
+https://live.zbds.top/tv/iptv4.txt
 
 [WHITELIST]
 # 以下是订阅源的白名单，白名单内的订阅源获取的接口将不会参与测速，始终保留至结果最前。
